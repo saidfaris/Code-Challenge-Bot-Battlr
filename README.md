@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Bot Battlr - React Web App
+Welcome to Bot Battlr, the one and only spot in the known universe where you can custom build your own Bot Army! This is an exciting React web application that allows you to browse through a list of robots, view a robot's details, and enlist a bot into your army.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [Project Setup](#project-setup)
+- [Project Guidelines](#project-guidelines)
+- [Core Deliverables](#core-deliverables)
+- [Endpoints for Core Deliverables](#endpoints-for-core-deliverables)
+- [Advanced Deliverables](#advanced-deliverables)
+- [Rubric](#rubric)
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+This project is a React web application designed to practice various React concepts such as components, props, state, events, and data fetching. The app allows users to view a list of available bots, add individual bots to their army, release bots from their army, and discharge bots permanently.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To successfully run this application, you need to have the following:
 
-### `npm test`
+- Node.js installed on your machine
+- A local server running JSON DB server to fetch data
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Setup
 
-### `npm run build`
+Follow these steps to set up the project:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Create a new project folder.
+2. Create a new GitHub repository and add your Team Manager as a contributor.
+3. Regularly commit to the repository to track your progress.
+4. In your project directory, create a `db.json` file and use it to set up your local JSON DB server.
+5. Run the following command to start the backend server: `json-server --watch db.json`
+6. Test your server by visiting this route in the browser: `http://localhost:8001/bots`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Guidelines
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ensure your project adheres to the following guidelines:
 
-### `npm run eject`
+- Follow the instructions provided and carefully read the directions for setting up the application.
+- Implement all Core Deliverables as outlined below.
+- Your app should have a clean and logical code structure.
+- Advanced Deliverables are optional, but if attempted, make sure to commit all Core Deliverables first.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Core Deliverables
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+As a user, you should be able to:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- See profiles of all bots rendered in the `BotCollection`.
+- Add an individual bot to your army by clicking on it. The selected bot should render in the `YourBotArmy` component. The bot can be enlisted only once. It does not disappear from the `BotCollection`.
+- Release a bot from your army by clicking on it. The bot disappears from the `YourBotArmy` component.
+- Discharge a bot from their service forever, by clicking the red button marked "x", which would delete the bot both from the backend and from the `YourBotArmy` on the frontend.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Endpoints for Core Deliverables
 
-## Learn More
+### GET /bots
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Example Response:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```json
+[
+  {
+    "id": 101,
+    "name": "wHz-93",
+    "health": 94,
+    "damage": 20,
+    "armor": 63,
+    "bot_class": "Support",
+    "catchphrase": "1010010101001101100011000111101",
+    "avatar_url": "https://robohash.org/nostrumrepellendustenetur.png?size=300x300&set=set1",
+    "created_at": "2018-10-02T19:55:10.800Z",
+    "updated_at": "2018-10-02T19:55:10.800Z"
+  },
+  {
+    "id": 102,
+    "name": "RyM-66",
+    "health": 86,
+    "damage": 36,
+    "armor": 77,
+    "bot_class": "Medic",
+    "catchphrase": "0110011100000100011110100110011000011001",
+    "avatar_url": "https://robohash.org/quidemconsequaturaut.png?size=300x300&set=set1",
+    "created_at": "2018-10-02T19:55:10.827Z",
+    "updated_at": "2018-10-02T19:55:10.827Z"
+  }
+]
+```
 
-### Code Splitting
+### DELETE /bots/:id
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Example Response:
 
-### Analyzing the Bundle Size
+```json
+{}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Advanced Deliverables
 
-### Making a Progressive Web App
+These deliverables are optional but are a great way to stretch your skills:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Choose if you want to enlist a bot into your army or just see their data. Clicking on the card should display a show view (`BotSpecs`) for that bot, which should replace `BotCollection`. BotSpecs should have two buttons: one to go back to the list view and another to enlist that bot.
+- Sort bots by their health, damage, or armor using a new component, `SortBar`.
+- When you enlist a bot, it should be removed from the `BotCollection` and added to `YourBotArmy`.
+- Filter bots by their class, and you can select multiple filters at the same time.
+- Sort bots by their health, damage, or armor using
