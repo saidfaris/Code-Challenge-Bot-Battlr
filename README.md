@@ -52,41 +52,6 @@ As a user, you should be able to:
 - Release a bot from your army by clicking on it. The bot disappears from the `YourBotArmy` component.
 - Discharge a bot from their service forever, by clicking the red button marked "x", which would delete the bot both from the backend and from the `YourBotArmy` on the frontend.
 
-## Endpoints for Core Deliverables
-
-### GET /bots
-
-Example Response:
-
-```json
-[
-  {
-    "id": 101,
-    "name": "wHz-93",
-    "health": 94,
-    "damage": 20,
-    "armor": 63,
-    "bot_class": "Support",
-    "catchphrase": "1010010101001101100011000111101",
-    "avatar_url": "https://robohash.org/nostrumrepellendustenetur.png?size=300x300&set=set1",
-    "created_at": "2018-10-02T19:55:10.800Z",
-    "updated_at": "2018-10-02T19:55:10.800Z"
-  },
-  {
-    "id": 102,
-    "name": "RyM-66",
-    "health": 86,
-    "damage": 36,
-    "armor": 77,
-    "bot_class": "Medic",
-    "catchphrase": "0110011100000100011110100110011000011001",
-    "avatar_url": "https://robohash.org/quidemconsequaturaut.png?size=300x300&set=set1",
-    "created_at": "2018-10-02T19:55:10.827Z",
-    "updated_at": "2018-10-02T19:55:10.827Z"
-  }
-]
-```
-
 ### DELETE /bots/:id
 
 Example Response:
